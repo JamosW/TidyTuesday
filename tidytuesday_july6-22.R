@@ -2,8 +2,6 @@ library(dplyr)
 library(ggplot2)
 library(cowplot)
 
-rent <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-07-05/rent.csv')
-permits <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-07-05/sf_permits.csv')
 new_construction <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-07-05/new_construction.csv')
 
 #Base data, removes negative number and replaces it with 0
@@ -12,7 +10,7 @@ base_data <- new_construction |>
   mutate(totalproduction = ifelse(totalproduction < 0, 0, totalproduction))
 
 #colors assigned to each county
-colrs <- scales::hue_pal(h = c(0, 360) + 15, c =90, l = 60, h.start = 30, direction = 2)(10)
+colrs <- scales::hue_pal(h = c(0, 360) + 15, c =100, l = 60, h.start = 0, direction = -1)(10)
 #grey color
 colrs[1] <- "#dcdcdc"
 
@@ -72,8 +70,5 @@ ggdraw() +
        c(rep(0,3),rep(c(0.2,0.4,0.6), 2))) +
   draw_label(label = "Change in Total Housing Production In San Francisco Counties (1990-2018)",
              x = 0.5, y = 0.9)
-
-
-
 
 
