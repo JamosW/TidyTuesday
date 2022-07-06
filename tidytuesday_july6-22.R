@@ -70,7 +70,7 @@ ggdraw() +
   Map(\(x,y,z) draw_plot(plot = x, x = y, y = z, width = 0.2, height = 0.2),
        plots, c(c(0.2,0.4,0.6),rep(0,3), rep(0.8, 3)), 
        c(rep(0,3),rep(c(0.2,0.4,0.6), 2))) +
-  draw_label(label = "Yearly New Construction In Sanfranciso Counties (1990-2018)",
+  draw_label(label = "Change in Total Housing Production In San Francisco Counties (1990-2018)",
              x = 0.5, y = 0.9)
 
 
