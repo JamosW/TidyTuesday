@@ -1,9 +1,6 @@
 library(dplyr)
-library(tidyr)
 library(ggplot2)
-library(sf)
 
-tuesdata <- tidytuesdayR::tt_load('2022-07-12')
 tuesdata <- tidytuesdayR::tt_load(2022, week = 28)
 
 ############################################Change in Frequency Of Flights#########################################################
