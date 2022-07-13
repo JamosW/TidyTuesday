@@ -42,6 +42,6 @@ div <- 100000
           plot.title = element_text(color = "#4096b1", size = 18, vjust = c(1))
           ) +
     labs(y = NULL, x = NULL,
-         title = "European flights per month from 2016 to 2020")
+         title = "European flights per month from 2016 to 2022")
     
   
