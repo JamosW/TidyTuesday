@@ -41,7 +41,7 @@ countries <- DescTools::d.countries
           axis.title.y = element_text(size = 13))
 
   
-  final_p <- ggdraw(add_sub(p, "Figure: Relative regional percentage electricity consumpion, averaged by decade. Source: data.nber.org", size= 11))
+  final_p <- ggdraw(add_sub(p, "Figure: Total global electricity consumption expressed in percentages, averaged by decade. \nSource: data.nber.org", size= 11))
   final_p
   ggsave2(filename = "tidytuesday_jul19_2022.png")
 
