@@ -26,7 +26,7 @@ countries <- DescTools::d.countries
   p <- ggplot(data = elec_data) +
     geom_col(aes(x = cutValues, y = percentage, 
                  fill = reorder(region, value, min)), color = "black", position = position_dodge())  +
-    labs(
+    labs(x = NULL,
          y = "Electric power consumption (kWh)",
          fill = "Region") +
     scale_y_sqrt( labels = label_percent(), breaks = c(0.02,seq(0.1, 0.6, 0.1))) +
