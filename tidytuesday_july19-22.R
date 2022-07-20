@@ -26,20 +26,22 @@ countries <- DescTools::d.countries
   p <- ggplot(data = elec_data) +
     geom_col(aes(x = cutValues, y = percentage, 
                  fill = reorder(region, value, min)), color = "black", position = position_dodge())  +
-    labs(y = NULL,
-         x = NULL,
-         title = "Percentage yearly electricty consumption, by decade and region",
+    labs(
+         y = "Electric power consumption (kWh)",
          fill = "Region") +
     scale_y_sqrt( labels = label_percent(), breaks = c(0.02,seq(0.1, 0.6, 0.1))) +
     scale_fill_brewer(type = "div", palette = 1) +
     theme_classic() +
     theme(legend.position = "bottom",
-          axis.text.x = element_text(size = 16),
-          axis.text.y = element_text(size = 16),
+          axis.text.x = element_text(size = 14),
+          axis.text.y = element_text(size = 12),
           plot.title = element_text(hjust = 0.5, size = 15),
           panel.grid.major.y = element_line(),
-          plot.margin = margin(30,30,30,30))
+          plot.margin = margin(30,30,30,30),
+          axis.title.y = element_text(size = 13))
 
-  ggdraw(add_sub(p, "Data: ", size= 12))
-
+  
+  final_p <- ggdraw(add_sub(p, "Figure: Relative regional percentage electricity consumpion, averaged by decade. Source: data.nber.org", size= 11))
+  final_p
+  ggsave2(filename = "tidytuesday_jul19_2022.png")
 
